@@ -28,7 +28,9 @@ export const MatchPage = () => {
             </div>
             <div>
                 <h1>{teamName} - {year}</h1>
-                {matches.map(match => <MatchDetailCard key={match.id} teamName={teamName} match={match}/>)}
+                {matches.length !== 0 ?
+                    matches.map(match => <MatchDetailCard key={match.id} teamName={teamName} match={match}/>)
+                    : <h2>No Matches for selected year {year}</h2>}
             </div>
         </div>
     );
